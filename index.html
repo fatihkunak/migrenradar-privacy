@@ -106,7 +106,7 @@
     </div>
   </header>
 
-  <p class="dates"><strong>Son güncelleme:</strong> 4 Temmuz 2026 &nbsp;·&nbsp; <strong>Yürürlük:</strong> 4 Temmuz 2026</p>
+  <p class="dates"><strong>Son güncelleme:</strong> 9 Temmuz 2026 &nbsp;·&nbsp; <strong>Yürürlük:</strong> 4 Temmuz 2026</p>
 
   <p>MigrenRadar (&quot;uygulama&quot;), migren riskini tahmin etmeye ve kişisel gözlemle baş etmeye
   yardımcı olan bir <strong>wellness</strong> uygulamasıdır. Gizlilik, uygulamanın temel tasarım
@@ -167,17 +167,19 @@
   hızı değişkenliği (HRV) ve adım verisi okunur. Bu veriler <strong>cihazınızda</strong> işlenir,
   sunucuya gitmez. Health Connect&#39;i hiç bağlamayabilirsiniz.</p>
 
-  <h3>3.4 AI sağlık raporu (opsiyonel, açıkça açmanız gerekir) — Anthropic&#39;e de-identified özet</h3>
-  <p>İsteğe bağlı &quot;AI raporu&quot; özelliğini açarsanız ve <strong>kendi Anthropic API
+  <h3>3.4 AI sağlık raporu (opsiyonel, açıkça açmanız gerekir) — seçtiğiniz sağlayıcıya de-identified özet</h3>
+  <p>İsteğe bağlı &quot;AI raporu&quot; özelliğini açarsanız ve <strong>kendi API
   anahtarınızı</strong> girerseniz:</p>
   <ul>
     <li>Uygulama, motorların ürettiği <strong>kimliksizleştirilmiş sayısal özeti</strong> (ör. risk
-      skorları, oranlar) Anthropic API&#39;sine (<code>api.anthropic.com</code>) gönderir ve dilsel
-      bir rapor alır.</li>
+      skorları, oranlar) seçtiğiniz sağlayıcıya gönderir ve dilsel bir rapor alır. Desteklenen
+      sağlayıcılar: <strong>Anthropic Claude, Google Gemini, OpenAI GPT, Groq Llama</strong> —
+      hangisini kullanacağınızı ve hangi anahtarı gireceğinizi siz seçersiniz.</li>
     <li><strong>Gönderilmeyen:</strong> ham günlük kayıtlarınız, tam tarihler, konumunuz, isminiz.</li>
     <li>Anahtar yoksa/çevrimdışıysa uygulama AI&#39;sız yerel bir özet üretir.</li>
-    <li>Bu özellik varsayılan olarak KAPALIDIR; açıp açmamak sizin kontrolünüzdedir. Gönderilen veri
-      Anthropic&#39;in kendi koşullarına tabi olarak işlenir.</li>
+    <li>Bu özellik varsayılan olarak KAPALIDIR; açıp açmamak ve hangi sağlayıcıyı kullanacağınız
+      tamamen sizin kontrolünüzdedir. Gönderilen veri seçtiğiniz sağlayıcının kendi koşullarına
+      tabi olarak işlenir.</li>
   </ul>
 
   <h3>3.5 Anonim araştırma katkısı (opsiyonel, varsayılan KAPALI)</h3>
@@ -192,6 +194,24 @@
       (&quot;unutulma hakkı&quot;).</li>
     <li>Bu özellik varsayılan olarak KAPALIDIR ve yalnızca siz açarsanız çalışır.</li>
   </ul>
+
+  <h3>3.6 Premium abonelik (opsiyonel) — Google Play Billing üzerinden</h3>
+  <p>Uygulamanın &quot;zeka katmanı&quot; özellikleri (kişisel deneyler, dijital fenotip, AI raporu
+  vb.) isteğe bağlı bir aylık/yıllık abonelikle açılır:</p>
+  <ul>
+    <li>Ödeme/kart bilgisi <strong>doğrudan Google Play</strong> tarafından işlenir; uygulama bu
+      bilgiyi görmez, saklamaz.</li>
+    <li>Abonelik durumu (&quot;aktif mi&quot;) <strong>yalnızca cihazınızda</strong> Google Play
+      Billing API&#39;siyle sorgulanır; kendi sunucumuza gönderilmez.</li>
+    <li>Aboneliği istediğiniz zaman Google Play hesap ayarlarınızdan iptal edebilirsiniz.</li>
+  </ul>
+
+  <h3>3.7 Geri bildirim formu (opsiyonel)</h3>
+  <p>Ayarlar → &quot;Geri bildirim gönder&quot; ile yazdığınız mesaj, uygulama tarafından hiçbir
+  sunucuya gönderilmez. Bunun yerine cihazınızın <strong>kendi e-posta uygulaması</strong> açılır;
+  mesajınız + kategori + sürüm/dil/platform bilgisiyle önceden doldurulmuş bir taslak gösterilir.
+  Bu taslağı göndermek tamamen sizin elinizdedir — gönderirseniz kendi e-posta hesabınızdan
+  geliştiricinin adresine (fatih.kunak@gmail.com) normal bir e-posta olarak ulaşır.</p>
 
   <hr>
 
@@ -248,9 +268,13 @@
   <ul>
     <li><strong>Open-Meteo</strong> (hava durumu) — koordinat gönderilir.
       <a href="https://open-meteo.com/en/terms">https://open-meteo.com/en/terms</a></li>
-    <li><strong>Anthropic</strong> (opsiyonel AI raporu) — yalnızca siz açarsanız, kimliksiz sayısal özet.</li>
+    <li><strong>Anthropic / Google Gemini / OpenAI / Groq</strong> (opsiyonel AI raporu) — yalnızca
+      siz açar ve bir sağlayıcı seçerseniz, kimliksiz sayısal özet yalnızca seçtiğiniz sağlayıcıya gider.</li>
     <li><strong>Google Health Connect</strong> (opsiyonel giyilebilir) — cihazda okuma.</li>
-    <li><strong>Araştırma backend&#39;i</strong> (opsiyonel, yalnızca rıza açıkken) — anonim, PII içermeyen katkı.</li>
+    <li><strong>Google Play Billing</strong> (opsiyonel abonelik) — ödeme Google tarafından işlenir, uygulama görmez.</li>
+    <li><strong>Araştırma backend&#39;i</strong> (opsiyonel, yalnızca rıza açıkken) — geliştiricinin
+      kendi sunucusuna (Cloudflare Workers üzerinde barındırılan) anonim, PII içermeyen katkı;
+      üçüncü tarafa aktarım yoktur.</li>
   </ul>
 
   <hr>
