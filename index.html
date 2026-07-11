@@ -167,20 +167,14 @@
   hızı değişkenliği (HRV) ve adım verisi okunur. Bu veriler <strong>cihazınızda</strong> işlenir,
   sunucuya gitmez. Health Connect&#39;i hiç bağlamayabilirsiniz.</p>
 
-  <h3>3.4 AI sağlık raporu (opsiyonel, açıkça açmanız gerekir) — seçtiğiniz sağlayıcıya de-identified özet</h3>
-  <p>İsteğe bağlı &quot;AI raporu&quot; özelliğini açarsanız ve <strong>kendi API
-  anahtarınızı</strong> girerseniz:</p>
-  <ul>
-    <li>Uygulama, motorların ürettiği <strong>kimliksizleştirilmiş sayısal özeti</strong> (ör. risk
-      skorları, oranlar) seçtiğiniz sağlayıcıya gönderir ve dilsel bir rapor alır. Desteklenen
-      sağlayıcılar: <strong>Anthropic Claude, Google Gemini, OpenAI GPT, Groq Llama</strong> —
-      hangisini kullanacağınızı ve hangi anahtarı gireceğinizi siz seçersiniz.</li>
-    <li><strong>Gönderilmeyen:</strong> ham günlük kayıtlarınız, tam tarihler, konumunuz, isminiz.</li>
-    <li>Anahtar yoksa/çevrimdışıysa uygulama AI&#39;sız yerel bir özet üretir.</li>
-    <li>Bu özellik varsayılan olarak KAPALIDIR; açıp açmamak ve hangi sağlayıcıyı kullanacağınız
-      tamamen sizin kontrolünüzdedir. Gönderilen veri seçtiğiniz sağlayıcının kendi koşullarına
-      tabi olarak işlenir.</li>
-  </ul>
+  <h3>3.4 Hekim ziyareti özeti — TAMAMEN CİHAZDA, hiçbir yere gitmez</h3>
+  <p>Uygulama, motorların (fenotip, MOH, uyku, haberci parmak izi, tedavi yanıt tutarlılığı vb.)
+  hesapladığı bulgulardan <strong>tamamen cihazınızda</strong>, deterministik (yapay zekâ
+  kullanmadan) bir metin özeti üretir; doktorunuza götürebilir ya da paylaşabilirsiniz. Bu özellik
+  için internet bağlantısı, API anahtarı ya da üçüncü taraf sağlayıcı gerekmez — hiçbir veri
+  cihazınızdan çıkmaz. (Not: Bu özellik önceden isteğe bağlı bir &quot;AI raporu&quot; olarak
+  üçüncü taraf sağlayıcılara kimliksiz özet gönderiyordu; bu davranış kaldırıldı, özellik artık
+  tamamen yerel çalışır.)</p>
 
   <h3>3.5 Anonim araştırma katkısı (opsiyonel, varsayılan KAPALI)</h3>
   <p>Rızanızı <strong>açıkça açarsanız</strong>, kişisel deney sonuçlarınızın <strong>anonim</strong>
@@ -209,8 +203,8 @@
   </ul>
 
   <h3>3.6 Premium abonelik (opsiyonel) — Google Play Billing üzerinden</h3>
-  <p>Uygulamanın &quot;zeka katmanı&quot; özellikleri (kişisel deneyler, dijital fenotip, AI raporu
-  vb.) isteğe bağlı bir aylık/yıllık abonelikle açılır:</p>
+  <p>Uygulamanın &quot;zeka katmanı&quot; özellikleri (kişisel deneyler, dijital fenotip, hekim
+  ziyareti özeti vb.) isteğe bağlı bir aylık/yıllık abonelikle açılır:</p>
   <ul>
     <li>Ödeme/kart bilgisi <strong>doğrudan Google Play</strong> tarafından işlenir; uygulama bu
       bilgiyi görmez, saklamaz.</li>
@@ -281,8 +275,6 @@
   <ul>
     <li><strong>Open-Meteo</strong> (hava durumu) — koordinat gönderilir.
       <a href="https://open-meteo.com/en/terms">https://open-meteo.com/en/terms</a></li>
-    <li><strong>Anthropic / Google Gemini / OpenAI / Groq</strong> (opsiyonel AI raporu) — yalnızca
-      siz açar ve bir sağlayıcı seçerseniz, kimliksiz sayısal özet yalnızca seçtiğiniz sağlayıcıya gider.</li>
     <li><strong>Google Health Connect</strong> (opsiyonel giyilebilir) — cihazda okuma.</li>
     <li><strong>Google Play Billing</strong> (opsiyonel abonelik) — ödeme Google tarafından işlenir, uygulama görmez.</li>
     <li><strong>Araştırma backend&#39;i</strong> (opsiyonel, yalnızca rıza açıkken) — geliştiricinin
